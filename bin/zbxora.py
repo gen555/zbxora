@@ -373,7 +373,7 @@ while True:
                                               for col in range(0, len(CURS.description)):
                                                   d[CURS.description[col][0]] = row[col]
                                               OBJECTS_LIST.append(d)
-                                          ROWS_JSON = '{\"data\":'+json.dumps(OBJECTS_LIST)+'}'
+                                          ROWS_JSON = '{\"data\":'+json.dumps(OBJECTS_LIST, ensure_ascii=False)+'}'
                                           # printf ("DEBUG lld key: %s json: %s\n", key, ROWS_JSON)
                                           output(HOSTNAME, key, ROWS_JSON)
                                           output(HOSTNAME, ME[0] + "[query," + section + "," + \
